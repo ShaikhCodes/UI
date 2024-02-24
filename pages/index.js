@@ -21,7 +21,7 @@ export default function Home() {
 
   const addTask = async () => {
     try {
-      await axios.post('http://localhost:5000/tasks', { task: newTask });
+      await axios.post('http://65.1.168.37:5000/tasks', { task: newTask });
       setNewTask('');
       fetchTasks();
     } catch (error) {
@@ -31,7 +31,7 @@ export default function Home() {
 
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:5000/tasks/${taskId}`);
+      await axios.delete(`http://65.1.168.37:5000/tasks/${taskId}`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
