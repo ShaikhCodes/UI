@@ -12,7 +12,7 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/tasks');
+      const response = await axios.get('http://65.1.168.37:5000/taskss');
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
