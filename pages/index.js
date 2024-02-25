@@ -21,7 +21,7 @@ export default function Home() {
 
   const addTask = async () => {
     try {
-      await axios.post('http://http://3.111.55.95:5000/tasks', { task: newTask });
+      await axios.post('http://3.111.55.95:5000/tasks', { task: newTask });
       setNewTask('');
       fetchTasks();
     } catch (error) {
