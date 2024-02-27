@@ -12,7 +12,7 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get(`${process.env.bip}/tasks`);
+      const response = await axios.get(`http://15.206.204.103/tasks`);
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -21,7 +21,7 @@ export default function Home() {
 
   const addTask = async () => {
     try {
-      await axios.post(process.env.bip/tasks, { task: newTask });
+      await axios.post(http://15.206.204.103/tasks, { task: newTask });
       setNewTask('');
       fetchTasks();
     } catch (error) {
@@ -31,7 +31,7 @@ export default function Home() {
 
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(`${process.env.bip}/tasks/${taskId}`);
+      await axios.delete(`http://15.206.204.103//${taskId}`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
