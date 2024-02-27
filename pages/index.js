@@ -12,7 +12,7 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://3.110.216.88/:5000/tasks');
+      const response = await axios.get('http://65.0.119.167:5000/tasks');
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -21,7 +21,7 @@ export default function Home() {
 
   const addTask = async () => {
     try {
-      await axios.post('http://3.110.216.88:5000/tasks', { task: newTask });
+      await axios.post('http://65.0.119.167:5000/tasks', { task: newTask });
       setNewTask('');
       fetchTasks();
     } catch (error) {
@@ -31,7 +31,7 @@ export default function Home() {
 
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(`http://3.110.216.88/tasks/${taskId}`);
+      await axios.delete(`http://65.0.119.167:5000/tasks/${taskId}`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
