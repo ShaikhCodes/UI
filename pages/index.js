@@ -12,7 +12,7 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get(process.env.backend_ip/tasks);
+      const response = await axios.get(`${process.env.backend_ip}/tasks`);
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -31,7 +31,7 @@ export default function Home() {
 
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(process.env.backend_ip/tasks/${taskId});
+      await axios.delete(`${process.env.backend_ip}/tasks/${taskId}`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
