@@ -21,7 +21,7 @@ export default function Home() {
 
   const addTask = async () => {
     try {
-      await axios.post(process.env.backend_ip/tasks', { task: newTask });
+      await axios.post(process.env.backend_ip/tasks, { task: newTask });
       setNewTask('');
       fetchTasks();
     } catch (error) {
