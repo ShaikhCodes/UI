@@ -12,7 +12,7 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get(`http://15.206.204.103/tasks`);
+      const response = await axios.get(`http://15.206.204.103:5000/tasks`);
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -21,7 +21,7 @@ export default function Home() {
 
   const addTask = async () => {
     try {
-      await axios.post('http://15.206.204.103/tasks', { task: newTask });
+      await axios.post('http://15.206.204.103:5000/tasks', { task: newTask });
       setNewTask('');
       fetchTasks();
     } catch (error) {
