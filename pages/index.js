@@ -31,7 +31,7 @@ export default function Home() {
 
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(process.env.backend_ip/tasks/${taskId}');
+      await axios.delete(process.env.backend_ip/tasks/${taskId});
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
